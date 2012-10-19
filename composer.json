@@ -1,0 +1,22 @@
+{
+    "name": "aegypius/github-webhook",
+    "description": "Github Webhook handler",
+    "authors": [
+        {
+            "name": "aegypius",
+            "email": "innercircle@aegypius.com"
+        }
+    ],
+    "config": {
+        "bin-dir": "bin"
+    },
+    "require": {
+        "php": ">= 5.3"
+    },
+    "minimum-stability": "dev",
+    "autoload" : {
+        "psr-0" : {
+            "" : "src"
+        }
+    }
+}
