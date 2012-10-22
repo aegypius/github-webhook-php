@@ -21,7 +21,7 @@ class Application extends \ArrayObject
         return $this;
     }
 
-    public function run($payload)
+    public function run($json)
     {
         // Load Config from object storage
         $config = $this->offsetGet('config');
@@ -36,7 +36,7 @@ class Application extends \ArrayObject
             }
 
             // Decoding payload
-            $payload = Payload::fromJSON($payload);
+            $payload = Payload::fromJSON($json);
 
             if ($payload) {
                 // Logging payload
@@ -61,7 +61,7 @@ class Application extends \ArrayObject
                 } else {
                     // Check if a specific handler exists
                     $handlerClass = sprintf(
-                        'Handler\\%s\\%s',
+                        '%s\\%s',
                         Util::camelize($payload->repository->owner->name, true),
                         Util::camelize($payload->repository->name, true)
                     );
