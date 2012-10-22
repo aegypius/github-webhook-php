@@ -4,7 +4,7 @@ Post-Receive Hook consumer for github
 
 ## Writing your hooks
 
-Create an handler class in src/GithubWebhook/Handler that inherit from GithubWebhook\Handler\HandlerInterface :
+Create an handler class in src/ that inherit from GithubWebhook\Handler\HandlerInterface :
 
 - You must name create a new namespace based on owner name of the repository using cap-styled convention
   Example : for an owner called "john doe" you must create a "JohnDoe" namespace.
@@ -19,7 +19,7 @@ Here is an example of this file :
 ```php
 <?php
 
-namespace GithubWebhook\Handler\JohnDoe;
+namespace JohnDoe;
 
 use GithubWebhook\Application;
 use GithubWebhook\Structure\Payload;
